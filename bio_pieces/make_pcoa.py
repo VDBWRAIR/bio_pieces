@@ -1,25 +1,36 @@
 '''
-Usage: make_pca.py <fasta> [--map <mapfile>] [--outdir <DIR>] [--coord <coordfile>]
+Usage: make_pcoa.py <fasta> [--map <mapfile>] [--outdir <DIR>] [--coord <coordfile>]
 
 Options:
-    --outdir=<DIR>,-o=<DIR>   Directory to put html file in. [Default: emperor]
+    --outdir=<DIR>,-o=<DIR>   Directory to put html file in. [Default: pcoa]
     --map=<mapfile>,-m=<mapfile>   TSV file which maps FASTA IDs to metadata. If not supplied one is generated using the FASTA IDs only.
-    --coord=<coordfile>,-c=<coordfile>   Coordinate file including distance matrix, defined by Qiime pipeline
+    --coord=<coordfile>,-c=<coordfile>   Coordinate file including distance matrix, defined by Qiime pipeline. Will over-ride the information in
+
+Help:
+    After running, open the resulting index.html file in your browser. i.e.:
+        $ make_pcoa aln.fasta --outdir pcoa
+        $ firefox pcoa/index.html
 '''
+
+from __future__ import print_function
+
 #options in docopt are special, and need = if using them
 ''' also create static png files.
 allow "color-by" parameters. '''
-from skbio import Alignment
-from skbio.stats.ordination import PCoA
-from itertools import groupby
 from docopt import docopt
 from schema import Schema, Use, Optional
 import os
 import sh
-import re
-import emperor #!not used, but emperor must be installed!
+try:
+    from skbio import Alignment
+    from skbio.stats.ordination import PCoA
+    import emperor #!not used, but emperor must be installed to run `make_emperor.py`
+    run_emperor = sh.Command('make_emperor.py')
+except ImportError:
+    print("make_pcoa requires emperor and scikit-bio!\nExecute `pip install emperor` to use.")
 
-run_emperor = sh.Command('make_emperor.py')
+
+
 
 def make_coordinates(fasta_filename):
     alignment = Alignment.read(fasta_filename)
@@ -31,6 +42,7 @@ def make_coordinates(fasta_filename):
 def write_coordiates(fasta_filename):
     outname = '%s.coord' % fasta_filename
     assert not os.path.exists(outname), "Coordinate file %s exists! Please remove or run again with --coord parameter." % outname
+    print("Generating Coordinate file %s from fasta file %s" % (outname, fasta_filename))
     make_coordinates(fasta_filename).write(outname)
     return outname
 
@@ -45,6 +57,7 @@ def make_simple_mapping(fasta_fn):
     header = '#SampleID\n'
     mapfile_fn = '%s.map' % fasta_fn
     assert not os.path.exists(mapfile_fn), "Mapping file %s exists! Please remove, or run again with --map parameter." % mapfile_fn
+    print("Auto-generating map file %s from fasta file %s" % (mapfile_fn, fasta_fn))
     with open(mapfile_fn, 'w') as mapfile:
         mapfile.write(header)
         mapfile.writelines(ids)
@@ -53,6 +66,7 @@ def make_simple_mapping(fasta_fn):
 #NOTE: Currently unused
 '''
 def make_undescore_metadata_mapping(fasta):
+    import re
     reg = re.compile(r'^[^_]+_([^_]+)_')
     with open('%s.map' % fasta, 'w') as mapfile:
         ids = map(X[1:], filter(X[0] == '>', open(fasta)))
