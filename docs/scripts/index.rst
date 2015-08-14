@@ -9,3 +9,4 @@ Scripts
     beast_wrapper
     group_references
     aln_pca
+    make_pcoa
