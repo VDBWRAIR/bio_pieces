@@ -23,7 +23,7 @@ setup(
             'beast_est_time = bio_pieces.beast_wrapper:beast_est_time',
             'version = bio_pieces.version:main',
             'aln_pca = bio_pieces.aln_pca:main',
-            'make_pca = bio_pieces.make_pca:main'
+            'make_pcoa = bio_pieces.make_pcoa:main'
             #'sequence_concat = bio_pieces.sequence_concat:main',
             #'sequence_files_concat = bio_pieces.sequence_files_concat:main',
             #'sequence_split = bio_pieces_old.sequence_split:main',
