@@ -8,3 +8,5 @@ Scripts
     beast_checkpoint
     beast_wrapper
     group_references
+    aln_pca
+    make_pcoa

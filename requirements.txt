@@ -6,3 +6,6 @@ docopt
 schema
 pyvcf
 sh
+matplotlib
+emperor
+scikit-bio
