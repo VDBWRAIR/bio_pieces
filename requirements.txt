@@ -6,4 +6,3 @@ docopt
 schema
 pyvcf
 sh
-matplotlib
