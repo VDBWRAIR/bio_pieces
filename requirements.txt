@@ -6,3 +6,4 @@ docopt
 schema
 pyvcf
 sh
+tabulate
