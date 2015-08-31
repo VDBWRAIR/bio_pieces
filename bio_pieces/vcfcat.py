@@ -86,7 +86,7 @@ def not_members(vcf_list, tag, collection):
     :param list collection: a list of objects
     :return list: all records where record[tag] or record.INFO[tag] is  not in collection
     '''
-    return [rec for rec in vcf_list if (tag not in flatten_vcf(rec)) or flatten_vcf(rec)[tag] not in collection]
+    return [rec for rec in vcf_list if tag in flatten_vcf(rec) and flatten_vcf(rec)[tag] not in collection]
 
 ambiguous = partial(not_members, tag='CB', collection=['A', 'C', 'G', 'T'])
 exists = partial(not_members, collection= [None, [None], '-'])
