@@ -54,9 +54,12 @@ def process(refs_fn, query_fn, save_path=None):
          dists = [yr - super_ref_year for yr in years]
          return muts, dists
     ref_muts, ref_dists =  get_relative_info(ref_seqs[1:], ref_years[1:])
-    plot_muts(ref_dists, ref_muts, color=legend['references'], show_interval=True)
     query_muts, query_dists = get_relative_info(*get_seqs_and_years(query_fn))
-    plot_muts(query_dists, query_muts, color=legend['queries'], show_interval=False)
+    do_plot(ref_dists, ref_muts, query_dists, query_muts, save_path)
+
+def do_plot(x1, y1, x2, y2, save_path):
+    plot_muts(x1, y1, color=legend['references'], show_interval=True)
+    plot_muts(x2, y2, color=legend['queries'], show_interval=False)
     legend_info = [mpatches.Patch(label=n, color=c) for n, c in legend.items()]
     plt.legend(handles=legend_info)
     plt.xlabel("Years since Base reference")
@@ -64,6 +67,7 @@ def process(refs_fn, query_fn, save_path=None):
     if save_path:
         plt.savefig(save_path)
     plt.show()
+
 
 def plot_muts(x, y, color, show_interval=False, dist=scipy.stats.poisson):
     """https://github.com/studywolf/blog/blob/master/RL/Combination%20allo%20and%20ego/egoalloBasic.py maybe worth checking out"""
