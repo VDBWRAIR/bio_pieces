@@ -16,8 +16,7 @@ import range_regex
 from funcy import compose
 from functools import partial
 import operator
-import re
-import os
+import os, sys, re
 from Bio import SeqIO
 import matplotlib.pyplot as plt
 import docopt, schema
@@ -58,8 +57,9 @@ def process(refs_fn, query_fn, save_path=None):
     do_plot(ref_dists, ref_muts, query_dists, query_muts, save_path)
 
 def do_plot(x1, y1, x2, y2, save_path):
-    plot_muts(x1, y1, color=legend['references'], show_interval=True)
-    plot_muts(x2, y2, color=legend['queries'], show_interval=False)
+    max_x = max(max(x1), max(x2))
+    plot_muts(x1, y1, color=legend['references'], interval=True, polyfit=True, max_x=max_x)
+    plot_muts(x2, y2, color=legend['queries'], interval=False)
     legend_info = [mpatches.Patch(label=n, color=c) for n, c in legend.items()]
     plt.legend(handles=legend_info)
     plt.xlabel("Years since Base reference")
@@ -68,27 +68,30 @@ def do_plot(x1, y1, x2, y2, save_path):
         plt.savefig(save_path)
     plt.show()
 
-
-def plot_muts(x, y, color, show_interval=False, dist=scipy.stats.poisson):
-    """https://github.com/studywolf/blog/blob/master/RL/Combination%20allo%20and%20ego/egoalloBasic.py maybe worth checking out"""
-    data = np.array([x, y]).T
-    if show_interval:
+def plot_muts(x, y, color, interval=False, dist=scipy.stats.poisson, polyfit=True, max_x=None):
+    plt.scatter(x, y, color=color)
+    if polyfit:
+        m = np.polyfit(x, y, 1)[0]
+        x, y = np.linspace(0,max_x), m*np.linspace(0,max_x)
+        plt.plot(x, y, color='y')
+    if interval:
         ''' can verify this works by using scipy.stats.norm.interval instead.'''
-        R = dist.interval(0.95, data)#, loc=mean, scale=std / np.sqrt(len(data)))
+        """see  http://stackoverflow.com/a/14814711/3757222"""
+        R = dist.interval(0.95, y)
         interval_left, interval_right = R
         interval_color = legend['interval']
-        plt.scatter(x, map(lambda x: x[0], interval_left), color=interval_color)
-        plt.scatter(x, map(lambda x: x[0], interval_right),color=interval_color)
-    plt.scatter(x, y, color=color)
+        plt.plot(x, interval_left, color=interval_color)
+        plt.plot(x, interval_right,color=interval_color)
 
 def test_plot():
     ''' can verify this works by using scipy.stats.norm.interval instead'''
     default_x = range(25)
-    default_y = range(0, 25)
-    plot_muts(default_x, default_y, 'r', True, scipy.stats.norm)
+    default_y = range(0, 50, 2)
+    plot_muts(default_x, default_y, 'r', True, scipy.stats.poisson, max_x=max(default_x))
     plt.show()
 
 def main():
+    if sys.argv[1] == 'test': test_plot()
     scheme = schema.Schema(
         { '--query' : os.path.isfile,
           '--refs' : os.path.isfile,
