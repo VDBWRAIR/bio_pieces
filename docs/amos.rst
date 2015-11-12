@@ -85,14 +85,14 @@ produces an AMOS file that is broken into 3 types of message blocks
 Parsing
 -------
 
-bio_pieces contains an interface to parse a given file handle that has been opened
+bio_bits contains an interface to parse a given file handle that has been opened
 on an AMOS file.
 
 To read in the AMOS file you simply do the following
 
 .. code-block:: python
 
-    from bio_pieces import amos
+    from bio_bits import amos
     a = None
     with open('AMOS.afg') as fh:
         a = amos.AMOS(fh)
@@ -141,7 +141,7 @@ Here is an example of how to convert all RED blocks into a single fastq file
 
 .. code-block:: python
 
-    from bio_pieces import amos
+    from bio_bits import amos
 
     # Fastq format string
     fastq_fmt = '@{iid}\n{seq}\n+\n{qlt}'

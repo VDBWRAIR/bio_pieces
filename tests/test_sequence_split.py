@@ -1,7 +1,7 @@
 from __future__ import print_function
 
 import unittest
-from bio_pieces import sequence_split
+from bio_bits import sequence_split
 import os
 from Bio.SeqRecord import SeqRecord
 from Bio.Seq import Seq
@@ -46,7 +46,7 @@ class TestGeneMap(unittest.TestCase):
        self.assertEquals(8, len(result_map))
        self.assertEquals(self.F_fastq_expected_lengths, result_lengths)
 
-@mock.patch('bio_pieces.sequence_split.ArgumentParser.parse_args')
+@mock.patch('bio_bits.sequence_split.ArgumentParser.parse_args')
 class TestFunctional(unittest.TestCase):
 
     def setUp(self):
@@ -91,7 +91,7 @@ class TestFunctional(unittest.TestCase):
         self.assertTrue(expected in open(os.path.join(self.outdir, 'C1.fasta')).read().replace('\n', '').replace(' ', ''))
 
 
-    @mock.patch('bio_pieces.sequence_split.os.path.isdir', return_value=False)
+    @mock.patch('bio_bits.sequence_split.os.path.isdir', return_value=False)
     def test_outdir_exists_raises_error(self, m_isdir, m_parse_args):
         m_parse_args.return_value = self.default_args
         self.assertRaises(OSError, sequence_split.main)

@@ -13,7 +13,7 @@ Installation
 
             pip install -r requirements-py26.txt
 
-2. Install bio_pieces
+2. Install bio_bits
 
     It is recommended to install into a virtualenv. If you know what you are doing
     and don't want to install into virtualenv, then you can skip right to step 3
@@ -33,7 +33,7 @@ Installation
 
             . env/bin/activate
 
-    3. Install bio_pieces
+    3. Install bio_bits
 
         .. code-block:: bash
 

@@ -7,7 +7,7 @@ import sh
 
 import pandas as pd
 
-from bio_pieces import beast_checkpoint
+from bio_bits import beast_checkpoint
 
 class Base(unittest.TestCase):
     def setUp(self):
@@ -18,7 +18,7 @@ class Base(unittest.TestCase):
 class BasePandas(Base):
     def setUp(self):
         super(BasePandas,self).setUp()
-        self.patch_pandas = mock.patch('bio_pieces.beast_checkpoint.pd')
+        self.patch_pandas = mock.patch('bio_bits.beast_checkpoint.pd')
         self.mock_pandas = self.patch_pandas.start()
         self.addCleanup(self.patch_pandas.stop)
 
@@ -52,7 +52,7 @@ class TestFunctional(Base):
     def test_mods_parameter_id_lines(self):
         log = pd.read_csv(self.testlog, sep='\t', comment='#')
         cmd = '{script} {xml} {trees} {log}'.format(
-            script=join(dirname(THIS),'bio_pieces','beast_checkpoint.py'),
+            script=join(dirname(THIS),'bio_bits','beast_checkpoint.py'),
             xml=self.testxml, trees=self.testtrees, log=self.testlog
         )
         ac = log.tail(1)['ac'].values[0]

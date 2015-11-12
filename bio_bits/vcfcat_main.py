@@ -38,7 +38,7 @@ Arguments:
 from schema import Schema, Use,  Optional
 from docopt import docopt
 import operator
-from bio_pieces import vcfcat
+from bio_bits import vcfcat
 import sys
 import vcf
 #TODO: Find a better way to dispatch commandline apps

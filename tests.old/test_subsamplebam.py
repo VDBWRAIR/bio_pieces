@@ -4,10 +4,10 @@ from common import *
 from mock import *
 import pysam
 
-from bio_pieces import subsamplebam
+from bio_bits import subsamplebam
 
 class Base(BaseTester):
-    modulepath = 'bio_pieces.subsamplebam'
+    modulepath = 'bio_bits.subsamplebam'
 
     def setUp(self):
         super(Base,self).setUp()
@@ -106,7 +106,7 @@ class TestSubsetForReference(Base):
         pileup_cols = self.build_mock_pileup(self.reads)
         mpysam.pileup.return_value = iter(pileup_cols)
 
-        with patch('bio_pieces.subsamplebam.random') as mrandom:
+        with patch('bio_bits.subsamplebam.random') as mrandom:
             def random_sample(population, size):
                 if size > len(population):
                     raise ValueError('size > population')
@@ -126,7 +126,7 @@ class TestSubsetForReference(Base):
         r = self._C(mpysam, 'reference', 10)
 
 class TestFunctional(Base):
-    @patch('bio_pieces.subsamplebam.argparse')
+    @patch('bio_bits.subsamplebam.argparse')
     def test_writes_sam_to_output_stdout(self, margparse):
         args = Mock()
         args.input = self.example_bam
@@ -134,7 +134,7 @@ class TestFunctional(Base):
         margparse.ArgumentParser.return_value.parse_args.return_value = args
 
         output = StringIO()
-        with patch('bio_pieces.subsamplebam.sys') as msys:
+        with patch('bio_bits.subsamplebam.sys') as msys:
             msys.stdout = output
             subsamplebam.main()
 
@@ -145,7 +145,7 @@ class TestFunctional(Base):
         for pilecol in pysam.AlignmentFile('out.sam','r'):
             eq_(10, pilecol.nsegments)
 
-    @patch('bio_pieces.subsamplebam.argparse')
+    @patch('bio_bits.subsamplebam.argparse')
     def test_writes_sam_to_output_filepath(self, margparse):
         args = Mock()
         args.input = self.example_bam

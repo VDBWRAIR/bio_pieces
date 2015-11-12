@@ -1,7 +1,7 @@
 from common import *
 
 class Base(BaseTester):
-    modulepath = 'bio_pieces.cat_sequences'
+    modulepath = 'bio_bits.cat_sequences'
 
     def setUp(self):
         super(Base, self).setUp()
@@ -73,7 +73,7 @@ class TestSortSequences(Base):
         self._check_sorted_seqs(self.seqrecs, self.idlist)
 
     def test_sortkey_outofbounds_raises_invalidsortkey(self):
-        from bio_pieces.cat_sequences import InvalidSortKey
+        from bio_bits.cat_sequences import InvalidSortKey
         idlist = [
             '1__1__1',
             '1__1',

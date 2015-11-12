@@ -3,7 +3,7 @@ from os.path import *
 from . import unittest, THIS
 import mock
 
-from bio_pieces import beast_wrapper
+from bio_bits import beast_wrapper
 
 class TestHoursStatesToSec(unittest.TestCase):
     def setUp(self):
@@ -79,7 +79,7 @@ class TestGetChainglengthFromXml(unittest.TestCase):
             beast_wrapper.get_chainlength_from_xml, self.xml
         )
 
-@mock.patch('bio_pieces.beast_wrapper.sys.stdout.write')
+@mock.patch('bio_bits.beast_wrapper.sys.stdout.write')
 class TestAddEstTimeToLine(unittest.TestCase):
     def setUp(self):
         self.lines = [
@@ -99,7 +99,7 @@ class TestAddEstTimeToLine(unittest.TestCase):
             '1 foo 1.0 hours/million states\t0d 00:59:59\n'
         )
 
-@mock.patch('bio_pieces.beast_wrapper.sh')
+@mock.patch('bio_bits.beast_wrapper.sh')
 class TestRunBeast(unittest.TestCase):
     def setUp(self):
         self.xmlpath = join(THIS, 'beast.xml')
@@ -117,7 +117,7 @@ class TestRunBeast(unittest.TestCase):
     def test_uses_sys_stdout_write_as_default_func(self, mock_sh):
         argv = ['-beagle_SSE', self.xmlpath]
         func = mock.Mock()
-        with mock.patch('bio_pieces.beast_wrapper.sys.stdout.write') as mock_sout:
+        with mock.patch('bio_bits.beast_wrapper.sys.stdout.write') as mock_sout:
             beast_wrapper.run_beast(*argv)
             mock_sh.beast.assert_called_with(
                 '-beagle_SSE',
@@ -125,9 +125,9 @@ class TestRunBeast(unittest.TestCase):
                 _out=mock_sout
             )
 
-@mock.patch('bio_pieces.beast_wrapper.functools.partial')
-@mock.patch('bio_pieces.beast_wrapper.sys')
-@mock.patch('bio_pieces.beast_wrapper.sh')
+@mock.patch('bio_bits.beast_wrapper.functools.partial')
+@mock.patch('bio_bits.beast_wrapper.sys')
+@mock.patch('bio_bits.beast_wrapper.sh')
 class TestBeastWrapper(unittest.TestCase):
     def setUp(self):
         self.xmlpath = join(THIS, 'beast.xml')
@@ -145,7 +145,7 @@ class TestBeastWrapper(unittest.TestCase):
 
 class TestBeastEstTime(unittest.TestCase):
     def test_returns_correct_time(self):
-        with mock.patch('bio_pieces.beast_wrapper.sys') as mock_sys:
+        with mock.patch('bio_bits.beast_wrapper.sys') as mock_sys:
             mock_sys.argv.__getitem__.side_effect = [
                 '1000000',
                 ['1', 'foo', '1.0', 'hours/million', 'states']

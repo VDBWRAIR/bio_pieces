@@ -7,8 +7,8 @@ from operator import itemgetter
 from pandas.util.testing import assert_frame_equal
 import pandas as pd
 import mock
-from bio_pieces import   amos2fastq_main
-from bio_pieces import amos2fastq as a2f
+from bio_bits import   amos2fastq_main
+from bio_bits import amos2fastq as a2f
 import os
 import random
 from functools import partial
@@ -71,7 +71,7 @@ class TestAmos2FastqMain(unittest.TestCase):
         self.expected_files = map(expected_join, outnames)
         self.result_files = outnames #map(output_join, outnames)
 
-    @mock.patch('bio_pieces.amos2fastq_main.docopt')
+    @mock.patch('bio_bits.amos2fastq_main.docopt')
     def test_main(self, mockopt):
         mockopt.return_value = {'<fastqs>' : self.fastqs, '--amos' : self.amos}
         read_file = lambda fn, fn2: (open(fn).read(), open(fn2).read())

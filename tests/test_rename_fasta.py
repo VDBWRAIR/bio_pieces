@@ -9,7 +9,7 @@ from os.path import *
 
 import mock
 
-from bio_pieces import rename_fasta
+from bio_bits import rename_fasta
 
 TEST_FASTA = join(THIS,'example.fasta')
 TEST_CSV = join(THIS,'renamelist.csv')
@@ -32,12 +32,12 @@ class TestGetCSVMap(unittest.TestCase):
 class TestRenameFastaIdentifiers(unittest.TestCase):
     def setUp(self):
         self.lines = FASTA.splitlines()
-        self.patch_fileinput = mock.patch('bio_pieces.rename_fasta.fileinput')
+        self.patch_fileinput = mock.patch('bio_bits.rename_fasta.fileinput')
         self.mock_fileinput = self.patch_fileinput.start()
         self.mock_fileinput_input = self.mock_fileinput.input
         self.addCleanup(self.mock_fileinput.stop)
-        self.patch_sys_stdout = mock.patch('bio_pieces.rename_fasta.sys.stdout')
-        self.patch_sys_stderr = mock.patch('bio_pieces.rename_fasta.sys.stderr')
+        self.patch_sys_stdout = mock.patch('bio_bits.rename_fasta.sys.stdout')
+        self.patch_sys_stderr = mock.patch('bio_bits.rename_fasta.sys.stderr')
         self.mock_stdout = self.patch_sys_stdout.start()
         self.mock_stderr = self.patch_sys_stderr.start()
         self.addCleanup(self.mock_stdout.stop)
@@ -103,7 +103,7 @@ class TestFunctional(unittest.TestCase):
             self.rev_mapping[value] = key
         self.rev_mapping['003'] = '003'
 
-        self.patcher_argparse = mock.patch('bio_pieces.rename_fasta.argparse')
+        self.patcher_argparse = mock.patch('bio_bits.rename_fasta.argparse')
         self.mock_argparse = self.patcher_argparse.start()
         self.addCleanup(self.mock_argparse.stop)
 

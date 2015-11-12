@@ -1,6 +1,6 @@
 import sys
 import unittest
-from bio_pieces import group_references as pc
+from bio_bits import group_references as pc
 import io
 from Bio import SeqIO
 import os
@@ -78,7 +78,7 @@ FF@@@F@F
         with open(samfile, 'w') as out:
             out.write(self.sam_header + '\n')
             out.write(self.samtext)
-        with mock.patch('bio_pieces.group_references.sh') as mock_sh:
+        with mock.patch('bio_bits.group_references.sh') as mock_sh:
             mock_sh.samtools.return_value = self.samtext
             rcode = pc.main()
         self.assertEquals(0, rcode)

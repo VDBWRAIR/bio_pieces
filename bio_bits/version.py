@@ -1,5 +1,5 @@
 import sys
-from bio_pieces import __release__
+from bio_bits import __release__
 
 def get_release():
     return __release__
