@@ -2,7 +2,7 @@
 Command-line utility for querying VCF files. By default, outputs a full vcf file matching the query.
 
 Usage:
-    vcfcat filter <FILE1> ( --tag=<TAG> (--ge | --le | --gt | --lt | --eq | --neq) <VALUE> ) [-c]
+    vcfcat filter <FILE1> ( --tag=<TAG> (--ge | --le | --gt | --lt | --eq | --ne) <VALUE> ) [-c]
     vcfcat exists <FILE1> (--tag=<TAG> ) [-c]
     vcfcat ambiguous <FILE1>  [-c]
     vcfcat vcall <FILE1>  [--csv | -c ]
@@ -19,7 +19,7 @@ Options:
     --lt         Get records Less Thaan <VALUE>
     --leq        Get records Less than or equal to <VALUE>
     --eq         Get records Exactly Equal to <VALUE>
-    --neq        Get records Not Equal to <VALUE>
+    --ne        Get records Not Equal to <VALUE>
 
 Arguments:
     filter:  print only vcf records matching the filter as a new vcf file.
@@ -42,7 +42,7 @@ from bio_pieces import vcfcat
 import sys
 import vcf
 #TODO: Find a better way to dispatch commandline apps
-ops = ['--ge', '--le', '--gt' , '--lt' , '--eq' , '--neq']
+ops = ['--ge', '--le', '--gt' , '--lt' , '--eq' , '--ne']
 def validate_value(val):
     if val is None or not val.isdigit():
         return val
