@@ -1,7 +1,7 @@
 from common import *
 
 class Base(BaseTester):
-    modulepath = 'bio_pieces.phylip'
+    modulepath = 'bio_bits.phylip'
 
     def setUp(self):
         super(Base,self).setUp()

@@ -6,7 +6,7 @@ Given any number of fastq files and a specified AMOS file (usually with .afg ext
 '''
 from schema import Schema, Use, And
 from docopt import docopt
-from bio_pieces import amos2fastq
+from bio_bits import amos2fastq
 #Do file validation immediately when script is started
 def all_elemnts_unique(collection):
     return len(collection) == len(set(collection))

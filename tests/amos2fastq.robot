@@ -13,7 +13,7 @@ ${in_amos} =            tests/testinput/foo.afg
 
 *** Test Cases ***
 TestAmos2Fastq
-    ${process_result} =         Run Process     python          bio_pieces/amos2fastq_main.py      ${in_fastq1}            ${in_fastq2}    --amos      ${in_amos}
+    ${process_result} =         Run Process     python          bio_bits/amos2fastq_main.py      ${in_fastq1}            ${in_fastq2}    --amos      ${in_amos}
     # Check system exited  correctly
     Should Be Equal As Integers         ${process_result.rc}        0 
     Log To Console       ${process_result.stdout}

@@ -1,7 +1,7 @@
 from common import *
 
 class Base(BaseTester):
-    modulepath = 'bio_pieces.phyml_seqrename'
+    modulepath = 'bio_bits.phyml_seqrename'
 
     def make_fasta_record(self, id, seq):
         fasta_fmt = '>{0}\n{1}\n'
@@ -116,7 +116,7 @@ class TestMain(Base):
         recs = [self.make_fasta_record(id,'ATGC') for id in renameids]
         self.writelines(recs, 'rename.fasta')
 
-        with patch('bio_pieces.phyml_seqrename.argparse') as argparse:
+        with patch('bio_bits.phyml_seqrename.argparse') as argparse:
             args = Mock(
                 renamestr = 'Seq\d+_',
                 fasta = 'from.fasta',

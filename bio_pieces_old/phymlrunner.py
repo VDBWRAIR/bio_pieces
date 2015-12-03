@@ -3,7 +3,7 @@ import subprocess
 from glob import glob
 import multiprocessing
 
-from bio_pieces.phylip import (
+from bio_bits.phylip import (
     make_renamed_phylip,
     rename_sequences,
 )

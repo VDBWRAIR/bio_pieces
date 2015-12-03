@@ -11,7 +11,7 @@ from functools import partial
 from Bio import SeqIO
 import itertools
 import pandas as pd
-from bio_pieces import amos
+from bio_bits import amos
 ''' Python3 compatibility '''
 from past.builtins import map , filter
 

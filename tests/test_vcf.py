@@ -1,8 +1,8 @@
 import unittest
-from bio_pieces import vcfcat
+from bio_bits import vcfcat
 import vcf
 import sys
-from bio_pieces import vcfcat_main
+from bio_bits import vcfcat_main
 
 class TestVcfCompare(unittest.TestCase):
     def setUp(self):

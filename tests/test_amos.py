@@ -8,7 +8,7 @@ except ImportError:
 
 import mock
 
-from bio_pieces import amos
+from bio_bits import amos
 
 RED =   '{{RED\n' \
         'iid:{iid}\n' \

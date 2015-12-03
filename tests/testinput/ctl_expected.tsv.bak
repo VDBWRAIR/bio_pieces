@@ -1,0 +1,183 @@
+seq id                                       nt Position    aa position  nt composition    aa composition    gene name
+-----------------------------------------  -------------  -------------  ----------------  ----------------  -------------------------------
+721                                                  991            331  WCA               S/T               envelope protein
+721                                                 1307            436  AYA               I/T               envelope protein
+721                                                 1826            609  AYA               I/T               envelope protein
+721                                                 1865            622  GRA               E/G               envelope protein
+721                                                 7766           2589  ARA               K/R               nonstructural protein NS5
+2055_Den4/AY618992_1/Thailand/2001/Den4_1           1927           7552  RAC               D/N               envelope protein
+2055_Den4/AY618992_1/Thailand/2001/Den4_1           2833           7854  YCG               P/S               nonstructural protein NS1
+2055_Den4/AY618992_1/Thailand/2001/Den4_1           3565           8098  YAT               Y/H               nonstructural protein NS2A
+2055_Den4/AY618992_1/Thailand/2001/Den4_1           6271           9000  RAA               K/E               nonstructural protein NS3
+2055_Den4/AY618992_1/Thailand/2001/Den4_1           8656           9795  YAT               Y/H               nonstructural protein NS5
+2055_Den4/AY618992_1/Thailand/2001/Den4_1           8998           9909  YAG               Q/*               nonstructural protein NS5
+2055_Den4/AY618992_1/Thailand/2001/Den4_1           9811          10180  YCC               P/S               nonstructural protein NS5
+2055_Den4/AY618992_1/Thailand/2001/Den4_1          10542          10423  AGN               GAPFOUND          -
+2055_Den4/AY618992_1/Thailand/2001/Den4_1          10543          10424  NNN               GAPFOUND          -
+2055_Den4/AY618992_1/Thailand/2001/Den4_1          10546          10425  NNN               GAPFOUND          -
+1942_Den4/AY618992_1/Thailand/2001/Den4_1           4540          11939  RTA               I/V               nonstructural protein NS3
+1942_Den4/AY618992_1/Thailand/2001/Den4_1          10177          13818  MCA               P/T               nonstructural protein NS5
+1942_Den4/AY618992_1/Thailand/2001/Den4_1          10546          13941  NNN               GAPFOUND          -
+1875_Den4/AY618992_1/Thailand/2001/Den4_1           1514          14446  AYG               M/T               envelope protein
+1875_Den4/AY618992_1/Thailand/2001/Den4_1           3056          14960  ARA               K/R               nonstructural protein NS1
+1875_Den4/AY618992_1/Thailand/2001/Den4_1           3058          14961  KCA               A/S               nonstructural protein NS1
+1875_Den4/AY618992_1/Thailand/2001/Den4_1           3073          14966  WTT               I/F               nonstructural protein NS1
+1875_Den4/AY618992_1/Thailand/2001/Den4_1           3491          15106  AYC               I/T               nonstructural protein NS2A
+1875_Den4/AY618992_1/Thailand/2001/Den4_1           3895          15243  RTG               M/V               nonstructural protein NS2A
+1875_Den4/AY618992_1/Thailand/2001/Den4_1           7445          16426  GYA               A/V               nonstructural protein NS4B
+948_Den4/AY618992_1/Thailand/2001/Den4_1            2819          18400  ARC               S/N               nonstructural protein NS1
+871_Den4/AY618992_1/Thailand/2001/Den4_1            2947          21961  RCC               A/T               nonstructural protein NS1
+871_Den4/AY618992_1/Thailand/2001/Den4_1            3058          21998  KCA               A/S               nonstructural protein NS1
+871_Den4/AY618992_1/Thailand/2001/Den4_1            3073          22003  WTT               I/F               nonstructural protein NS1
+871_Den4/AY618992_1/Thailand/2001/Den4_1            3116          22017  GYG               A/V               nonstructural protein NS1
+871_Den4/AY618992_1/Thailand/2001/Den4_1            3181          22039  RTW               I/V               nonstructural protein NS1
+871_Den4/AY618992_1/Thailand/2001/Den4_1            3179          22040  RTW               I/V               nonstructural protein NS1
+871_Den4/AY618992_1/Thailand/2001/Den4_1            3338          22094  ART               S/N               nonstructural protein NS1
+871_Den4/AY618992_1/Thailand/2001/Den4_1            3362          22102  ARA               K/R               nonstructural protein NS1
+871_Den4/AY618992_1/Thailand/2001/Den4_1            3375          22106  WCR               S/T               nonstructural protein NS1
+871_Den4/AY618992_1/Thailand/2001/Den4_1            3375          22107  WCR               S/T               nonstructural protein NS1
+871_Den4/AY618992_1/Thailand/2001/Den4_1            4314          22420  ATV               I/M               nonstructural protein NS2B
+871_Den4/AY618992_1/Thailand/2001/Den4_1            7045          23331  WCC               S/T               nonstructural protein NS4B
+871_Den4/AY618992_1/Thailand/2001/Den4_1           10536          24494  GAW               E/D               -
+871_Den4/AY618992_1/Thailand/2001/Den4_1           10537          24495  YCA               P/S               -
+947_Den4/AY618992_1/Thailand/2001/Den4_1            2971          25489  YTY               L/F               nonstructural protein NS1
+947_Den4/AY618992_1/Thailand/2001/Den4_1            6763          26753  YTT               L/F               2K peptide
+1793_Den4/AY618992_1/Thailand/2001/Den4_1            223          28089  MAG               Q/K               anchored capsid protein
+1793_Den4/AY618992_1/Thailand/2001/Den4_1            556          28200  RCC               A/T               membrane glycoprotein precursor
+1793_Den4/AY618992_1/Thailand/2001/Den4_1            586          28210  RGT               S/G               membrane glycoprotein precursor
+1793_Den4/AY618992_1/Thailand/2001/Den4_1            613          28219  YCA               P/S               membrane glycoprotein precursor
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           2875          28973  YCG               P/S               nonstructural protein NS1
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           2943          28995  AAN               GAPFOUND          nonstructural protein NS1
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           2944          28996  NNG               GAPFOUND          nonstructural protein NS1
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           2976          29006  ATN               GAPFOUND          nonstructural protein NS1
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           2977          29007  NNN               GAPFOUND          nonstructural protein NS1
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           2980          29008  NTG               GAPFOUND          nonstructural protein NS1
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           2987          29010  ANN               GAPFOUND          nonstructural protein NS1
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           2989          29011  NGT               GAPFOUND          nonstructural protein NS1
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           2996          29013  TNN               GAPFOUND          nonstructural protein NS1
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           3001          29015  NNN               GAPFOUND          nonstructural protein NS1
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           3004          29016  NCC               GAPFOUND          nonstructural protein NS1
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           3073          29039  NTT               GAPFOUND          nonstructural protein NS1
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           3086          29043  ARC               S/N               nonstructural protein NS1
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           3095          29046  CNG               GAPFOUND          nonstructural protein NS1
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           3116          29053  GNG               GAPFOUND          nonstructural protein NS1
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           3144          29062  GAN               GAPFOUND          nonstructural protein NS1
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           3159          29067  GAN               GAPFOUND          nonstructural protein NS1
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           3160          29068  NNC               GAPFOUND          nonstructural protein NS1
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           3206          29083  GNC               GAPFOUND          nonstructural protein NS1
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           3235          29093  NNN               GAPFOUND          nonstructural protein NS1
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           3238          29094  NNN               GAPFOUND          nonstructural protein NS1
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           3241          29095  NNN               GAPFOUND          nonstructural protein NS1
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           3244          29096  NNN               GAPFOUND          nonstructural protein NS1
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           3247          29097  NNN               GAPFOUND          nonstructural protein NS1
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           3250          29098  NNN               GAPFOUND          nonstructural protein NS1
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           3253          29099  NNN               GAPFOUND          nonstructural protein NS1
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           3256          29100  NNN               GAPFOUND          nonstructural protein NS1
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           3316          29120  NGG               GAPFOUND          nonstructural protein NS1
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           3337          29127  NAT               GAPFOUND          nonstructural protein NS1
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           3341          29128  GNA               GAPFOUND          nonstructural protein NS1
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           3408          29150  ATN               GAPFOUND          nonstructural protein NS1
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           3412          29152  NTG               GAPFOUND          nonstructural protein NS1
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           3493          29179  MCC               P/T               nonstructural protein NS2A
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           3509          29184  ANT               GAPFOUND          nonstructural protein NS2A
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           3837          29293  TTN               GAPFOUND          nonstructural protein NS2A
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           6185          30076  ARG               K/R               nonstructural protein NS3
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           6187          30077  RAR               K/E               nonstructural protein NS3
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           6614          30219  TYT               S/F               nonstructural protein NS4A
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           6650          30231  ARA               K/R               nonstructural protein NS4A
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           8630          30891  ART               S/N               nonstructural protein NS5
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           8844          30962  AAN               GAPFOUND          nonstructural protein NS5
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           9938          31327  AYT               I/T               nonstructural protein NS5
+1793_Den4/AY618992_1/Thailand/2001/Den4_1           9941          31328  GRC               D/G               nonstructural protein NS5
+1793_Den4/AY618992_1/Thailand/2001/Den4_1          10015          31353  RTT               I/V               nonstructural protein NS5
+1793_Den4/AY618992_1/Thailand/2001/Den4_1          10089          31377  NGR               GAPFOUND          nonstructural protein NS5
+1793_Den4/AY618992_1/Thailand/2001/Den4_1          10089          31378  NGR               GAPFOUND          nonstructural protein NS5
+1901_Den4/AY618992_1/Thailand/2001/Den4_1             15          31536  AAN               GAPFOUND          -
+1901_Den4/AY618992_1/Thailand/2001/Den4_1            111          31568  TTN               GAPFOUND          anchored capsid protein
+1901_Den4/AY618992_1/Thailand/2001/Den4_1           2279          32291  GYT               A/V               envelope protein
+1901_Den4/AY618992_1/Thailand/2001/Den4_1           8798          34464  ARA               K/R               nonstructural protein NS5
+1901_Den4/AY618992_1/Thailand/2001/Den4_1          10195          34930  RAG               K/E               nonstructural protein NS5
+1901_Den4/AY618992_1/Thailand/2001/Den4_1          10366          34987  RGG               R/G               -
+1934_Den4/AY618992_1/Thailand/2001/Den4_1             15          35052  AAN               GAPFOUND          -
+1934_Den4/AY618992_1/Thailand/2001/Den4_1            111          35084  TTN               GAPFOUND          anchored capsid protein
+1934_Den4/AY618992_1/Thailand/2001/Den4_1            998          35380  GMT               A/D               envelope protein
+1934_Den4/AY618992_1/Thailand/2001/Den4_1           4515          36552  TTM               L/F               nonstructural protein NS3
+1934_Den4/AY618992_1/Thailand/2001/Den4_1           8798          37980  ARA               K/R               nonstructural protein NS5
+1909_Den4/AY618992_1/Thailand/2001/Den4_1           2963          39552  ARR               K/R               nonstructural protein NS1
+1909_Den4/AY618992_1/Thailand/2001/Den4_1           3029          39574  GYG               A/V               nonstructural protein NS1
+1909_Den4/AY618992_1/Thailand/2001/Den4_1           3058          39584  KCA               A/S               nonstructural protein NS1
+1909_Den4/AY618992_1/Thailand/2001/Den4_1           3063          39585  TAN               GAPFOUND          nonstructural protein NS1
+1909_Den4/AY618992_1/Thailand/2001/Den4_1           3068          39587  GKC               G/V               nonstructural protein NS1
+1909_Den4/AY618992_1/Thailand/2001/Den4_1           3073          39589  NTT               GAPFOUND          nonstructural protein NS1
+1909_Den4/AY618992_1/Thailand/2001/Den4_1           3141          39611  NTR               GAPFOUND          nonstructural protein NS1
+1909_Den4/AY618992_1/Thailand/2001/Den4_1           3141          39612  NTR               GAPFOUND          nonstructural protein NS1
+1909_Den4/AY618992_1/Thailand/2001/Den4_1           3181          39626  RTD               I/M/V             nonstructural protein NS1
+1909_Den4/AY618992_1/Thailand/2001/Den4_1           3179          39627  RTD               I/M/V             nonstructural protein NS1
+1909_Den4/AY618992_1/Thailand/2001/Den4_1           3338          39681  ART               S/N               nonstructural protein NS1
+1909_Den4/AY618992_1/Thailand/2001/Den4_1           3362          39689  ARA               K/R               nonstructural protein NS1
+1909_Den4/AY618992_1/Thailand/2001/Den4_1           3375          39693  WCR               S/T               nonstructural protein NS1
+1909_Den4/AY618992_1/Thailand/2001/Den4_1           3375          39694  WCR               S/T               nonstructural protein NS1
+1909_Den4/AY618992_1/Thailand/2001/Den4_1           3491          39734  AYC               I/T               nonstructural protein NS2A
+952_Den4/AY618992_1/Thailand/2001/Den4_1            3362          43208  ARA               K/R               nonstructural protein NS1
+951_Den4/AY618992_1/Thailand/2001/Den4_1            2942          46584  ARC               S/N               nonstructural protein NS1
+951_Den4/AY618992_1/Thailand/2001/Den4_1            3115          46642  RTG               M/V               nonstructural protein NS1
+951_Den4/AY618992_1/Thailand/2001/Den4_1            7909          48240  YCA               P/S               nonstructural protein NS5
+951_Den4/AY618992_1/Thailand/2001/Den4_1            7968          48259  GAS               E/D               nonstructural protein NS5
+951_Den4/AY618992_1/Thailand/2001/Den4_1           10172          48994  AWA               I/K               nonstructural protein NS5
+951_Den4/AY618992_1/Thailand/2001/Den4_1           10193          49001  TYG               S/L               nonstructural protein NS5
+2002_Den4/AY618992_1/Thailand/2001/Den4_1           1282          49547  YAT               Y/H               envelope protein
+2002_Den4/AY618992_1/Thailand/2001/Den4_1           2892          50084  GAN               GAPFOUND          nonstructural protein NS1
+2002_Den4/AY618992_1/Thailand/2001/Den4_1           3058          50140  KCA               A/S               nonstructural protein NS1
+2002_Den4/AY618992_1/Thailand/2001/Den4_1           3074          50145  DYT               A/F/I/S/T/V       nonstructural protein NS1
+2002_Den4/AY618992_1/Thailand/2001/Den4_1           3073          50146  DYT               A/F/I/S/T/V       nonstructural protein NS1
+2002_Den4/AY618992_1/Thailand/2001/Den4_1           3115          50160  RTG               M/V               nonstructural protein NS1
+2002_Den4/AY618992_1/Thailand/2001/Den4_1           3147          50171  ATR               I/M               nonstructural protein NS1
+2002_Den4/AY618992_1/Thailand/2001/Den4_1           3181          50183  RTD               I/M/V             nonstructural protein NS1
+2002_Den4/AY618992_1/Thailand/2001/Den4_1           3179          50184  RTD               I/M/V             nonstructural protein NS1
+2002_Den4/AY618992_1/Thailand/2001/Den4_1           3338          50238  ART               S/N               nonstructural protein NS1
+2002_Den4/AY618992_1/Thailand/2001/Den4_1           3375          50250  WCR               S/T               nonstructural protein NS1
+2002_Den4/AY618992_1/Thailand/2001/Den4_1           3375          50251  WCR               S/T               nonstructural protein NS1
+2002_Den4/AY618992_1/Thailand/2001/Den4_1           3397          50259  RCT               A/T               nonstructural protein NS1
+2002_Den4/AY618992_1/Thailand/2001/Den4_1           3491          50292  AYC               I/T               nonstructural protein NS2A
+2002_Den4/AY618992_1/Thailand/2001/Den4_1           4314          50568  ATR               I/M               nonstructural protein NS2B
+2002_Den4/AY618992_1/Thailand/2001/Den4_1           4373          50588  AYT               I/T               nonstructural protein NS2B
+2002_Den4/AY618992_1/Thailand/2001/Den4_1           6014          51135  ARG               K/R               nonstructural protein NS3
+2002_Den4/AY618992_1/Thailand/2001/Den4_1           6446          51279  CYT               P/L               nonstructural protein NS4A
+2002_Den4/AY618992_1/Thailand/2001/Den4_1          10064          52485  AYA               I/T               nonstructural protein NS5
+2002_Den4/AY618992_1/Thailand/2001/Den4_1          10544          52645  GNN               GAPFOUND          -
+2002_Den4/AY618992_1/Thailand/2001/Den4_1          10546          52646  NNN               GAPFOUND          -
+1916_Den4/AY618992_1/Thailand/2001/Den4_1           3689          53876  GYA               A/V               nonstructural protein NS2A
+1916_Den4/AY618992_1/Thailand/2001/Den4_1          10544          56161  GNN               GAPFOUND          -
+1916_Den4/AY618992_1/Thailand/2001/Den4_1          10546          56162  NNN               GAPFOUND          -
+1931_Den4/AY618992_1/Thailand/2001/Den4_1           2865          57117  CNY               GAPFOUND          nonstructural protein NS1
+1931_Den4/AY618992_1/Thailand/2001/Den4_1           2865          57118  CNY               GAPFOUND          nonstructural protein NS1
+1931_Den4/AY618992_1/Thailand/2001/Den4_1           2913          57134  GAN               GAPFOUND          nonstructural protein NS1
+1931_Den4/AY618992_1/Thailand/2001/Den4_1           2964          57151  AAN               GAPFOUND          nonstructural protein NS1
+1931_Den4/AY618992_1/Thailand/2001/Den4_1           3003          57164  AAN               GAPFOUND          nonstructural protein NS1
+1931_Den4/AY618992_1/Thailand/2001/Den4_1           3013          57168  NTG               GAPFOUND          nonstructural protein NS1
+1931_Den4/AY618992_1/Thailand/2001/Den4_1           3039          57176  AGN               GAPFOUND          nonstructural protein NS1
+1931_Den4/AY618992_1/Thailand/2001/Den4_1           3058          57183  NCA               GAPFOUND          nonstructural protein NS1
+1931_Den4/AY618992_1/Thailand/2001/Den4_1           3081          57190  CAN               GAPFOUND          nonstructural protein NS1
+1931_Den4/AY618992_1/Thailand/2001/Den4_1           3087          57192  AAN               GAPFOUND          nonstructural protein NS1
+1931_Den4/AY618992_1/Thailand/2001/Den4_1           3090          57193  TAN               GAPFOUND          nonstructural protein NS1
+1931_Den4/AY618992_1/Thailand/2001/Den4_1           3116          57202  RYG               A/M/T/V           nonstructural protein NS1
+1931_Den4/AY618992_1/Thailand/2001/Den4_1           3115          57203  RYG               A/M/T/V           nonstructural protein NS1
+1931_Den4/AY618992_1/Thailand/2001/Den4_1           3139          57211  YTN               GAPFOUND          nonstructural protein NS1
+1931_Den4/AY618992_1/Thailand/2001/Den4_1           3137          57212  YTN               GAPFOUND          nonstructural protein NS1
+1931_Den4/AY618992_1/Thailand/2001/Den4_1           3147          57214  ATR               I/M               nonstructural protein NS1
+1931_Den4/AY618992_1/Thailand/2001/Den4_1           3181          57226  RTD               I/M/V             nonstructural protein NS1
+1931_Den4/AY618992_1/Thailand/2001/Den4_1           3179          57227  RTD               I/M/V             nonstructural protein NS1
+1931_Den4/AY618992_1/Thailand/2001/Den4_1           3189          57229  GAS               E/D               nonstructural protein NS1
+1931_Den4/AY618992_1/Thailand/2001/Den4_1           3300          57268  GAN               GAPFOUND          nonstructural protein NS1
+1931_Den4/AY618992_1/Thailand/2001/Den4_1           3338          57281  ANT               GAPFOUND          nonstructural protein NS1
+1931_Den4/AY618992_1/Thailand/2001/Den4_1           3373          57293  NCA               GAPFOUND          nonstructural protein NS1
+1931_Den4/AY618992_1/Thailand/2001/Den4_1           3415          57307  NTA               GAPFOUND          nonstructural protein NS1
+1931_Den4/AY618992_1/Thailand/2001/Den4_1           3452          57319  ARA               K/R               nonstructural protein NS1
+1931_Den4/AY618992_1/Thailand/2001/Den4_1           3488          57331  GYR               A/V               nonstructural protein NS2A
+1931_Den4/AY618992_1/Thailand/2001/Den4_1           3487          57332  GYR               A/V               nonstructural protein NS2A
+1931_Den4/AY618992_1/Thailand/2001/Den4_1           3491          57333  AYC               I/T               nonstructural protein NS2A
+1931_Den4/AY618992_1/Thailand/2001/Den4_1           3496          57335  YTY               L/F               nonstructural protein NS2A
+1931_Den4/AY618992_1/Thailand/2001/Den4_1           3553          57354  RTG               M/V               nonstructural protein NS2A
+1931_Den4/AY618992_1/Thailand/2001/Den4_1           7038          58516  TTW               L/F               nonstructural protein NS4B
+1931_Den4/AY618992_1/Thailand/2001/Den4_1          10544          59685  GNN               GAPFOUND          -
+1931_Den4/AY618992_1/Thailand/2001/Den4_1          10546          59686  NNN               GAPFOUND          -
