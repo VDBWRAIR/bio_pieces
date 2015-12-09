@@ -10,6 +10,7 @@ Options:
 Help:
     All sequences must be the same length.
 '''
+from __future__ import print_function
 import matplotlib.patches as mpatches
 import numpy as np
 import range_regex
@@ -35,8 +36,14 @@ legend = {"queries": 'r', "references": 'b', "interval": 'g'}
 #    return hamming(s1, s2)/float(len(s1))
 
 def extract_year(header):
-    s = header[-4:]
-    return int(year_regex.search(s).group())
+    #s = header[-4:]
+    s = header.split('/')[3]
+    try: 
+        return int(year_regex.search(s).group())
+    except:
+        print( header)
+# had to add 2015 to A/England/50220895/
+
 
 def get_seqs_and_years(fn):
     fasta = SeqIO.parse(fn, format="fasta")
@@ -48,6 +55,7 @@ def get_seqs_and_years(fn):
 
 def process(refs_fn, query_fn, save_path=None):
     ref_seqs, ref_years = zip(*sorted(zip(*get_seqs_and_years(refs_fn)), key=get(1)))
+    ref_seqs = map(str.upper, ref_seqs)
     super_ref_seq, super_ref_year = ref_seqs[0], ref_years[0]
     get_mutations = partial(hamming, super_ref_seq)
     def get_relative_info(seqs, years):
@@ -57,12 +65,13 @@ def process(refs_fn, query_fn, save_path=None):
     ref_muts, ref_dists =  get_relative_info(ref_seqs[1:], ref_years[1:])
     query_muts, query_dists = get_relative_info(*get_seqs_and_years(query_fn))
     do_plot(ref_dists, ref_muts, query_dists, query_muts, save_path)
+    map(compose(print, '{0}\t{1}'.format ), ref_dists, ref_muts)
 
 def do_plot(x1, y1, x2, y2, save_path=None):
 
     ax = plt.subplot(111)
     max_x = max(max(x1), max(x2))
-    plot_muts(ax, x1, y1, color=legend['references'], interval=True, polyfit=True, max_x=max_x)
+    plot_muts(ax, x1, y1, color=legend['references'], interval=True, polyfit=False, max_x=max_x)
     plot_muts(ax, x2, y2, color=legend['queries'], interval=False)
     legend_info = [mpatches.Patch(label=n, color=c) for n, c in legend.items()]
     """ http://stackoverflow.com/questions/4700614/how-to-put-the-legend-out-of-the-plot"""
@@ -122,3 +131,11 @@ def main():
     process(refs, queries, out)
 
 if __name__ == '__main__': main()
+
+'''
+'Our Data Example'!A1:A2991,'Our Data Example'!B1:B2991, 'Our Data Example'!D1:D2991, 'Our Data Example'!E1:E2991
+'Our Data Example'!B1:B8, 'Our Data Example'!D1:D8, 'Our Data Example'!E1:E8
+
+'Our Data Example'!A1:A999,'Our Data Example'!B1:B999, 'Our Data Example'!D1:D999, 'Our Data Example'!E1:E999
+
+'''
