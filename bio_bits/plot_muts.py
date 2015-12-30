@@ -14,7 +14,6 @@ from __future__ import print_function
 import matplotlib.patches as mpatches
 import numpy as np
 import range_regex
-from funcy import compose
 from functools import partial
 import operator
 import os, sys, re
@@ -22,9 +21,15 @@ from Bio import SeqIO
 import matplotlib.pyplot as plt
 import docopt, schema
 from operator import itemgetter as get
-#below import is necessary for some reason
-from scipy.stats import poisson
-import scipy
+try:
+    #below import is necessary for some reason
+    from scipy.stats import poisson
+    import scipy
+    DISTRIBUTION = scipy.stats.poisson
+except ImportError:
+    DISTRIBUTION = None
+compose2 = lambda f,g: lambda *x: f(g(*x)) 
+compose = lambda *fs: reduce(compose2, fs)
 
 years = range_regex.range_regex.regex_for_range(1900, 2015)
 year_regex = re.compile(years)
@@ -65,14 +70,14 @@ def process(refs_fn, query_fn, save_path=None):
     ref_muts, ref_dists =  get_relative_info(ref_seqs[1:], ref_years[1:])
     query_muts, query_dists = get_relative_info(*get_seqs_and_years(query_fn))
     do_plot(ref_dists, ref_muts, query_dists, query_muts, save_path)
-    map(compose(print, '{0}\t{1}'.format ), ref_dists, ref_muts)
+    #map(compose(print, '{0}\t{1}'.format ), ref_dists, ref_muts)
 
 def do_plot(x1, y1, x2, y2, save_path=None):
 
     ax = plt.subplot(111)
     max_x = max(max(x1), max(x2))
-    plot_muts(ax, x1, y1, color=legend['references'], interval=True, polyfit=False, max_x=max_x)
-    plot_muts(ax, x2, y2, color=legend['queries'], interval=False)
+    plot_muts(ax, x1, y1, color=legend['references'], polyfit=False, max_x=max_x)
+    plot_muts(ax, x2, y2, color=legend['queries'])
     legend_info = [mpatches.Patch(label=n, color=c) for n, c in legend.items()]
     """ http://stackoverflow.com/questions/4700614/how-to-put-the-legend-out-of-the-plot"""
     box = ax.get_position()
@@ -85,7 +90,7 @@ def do_plot(x1, y1, x2, y2, save_path=None):
         plt.savefig(save_path)
     plt.show()
 
-def plot_muts(ax, x, y, color, interval=False, dist=scipy.stats.poisson, polyfit=False, max_x=None):
+def plot_muts(ax, x, y, color, dist=DISTRIBUTION, polyfit=False, max_x=None):
     #problem was didn't account for +b
     '''if norm distribution, probably have to scale (via passing loc= and scale=)'''
     ax.scatter(x, y, color=color)
@@ -96,7 +101,7 @@ def plot_muts(ax, x, y, color, interval=False, dist=scipy.stats.poisson, polyfit
         m, _, _, _ = np.linalg.lstsq(x, y)
         x, y = np.linspace(0,max_x, 100), m*np.linspace(0,max_x, 100)
         ax.plot(x, y, color='y')
-    if interval:
+    if dist:
         """see  http://stackoverflow.com/a/14814711/3757222"""
         R = dist.interval(0.95, y)
         interval_left, interval_right = R
@@ -104,20 +109,20 @@ def plot_muts(ax, x, y, color, interval=False, dist=scipy.stats.poisson, polyfit
         ax.plot(x, interval_left, color=interval_color)
         ax.plot(x, interval_right,color=interval_color)
 
-def test_more():
-    refs = range(25), range(25)
-    queries = [1, 5, 20, 10], [2, 20, 40, 10]
-    do_plot(refs[0], refs[1], queries[0], queries[1], None)
-
-def test_plot():
-    ''' can verify this works by using scipy.stats.norm.interval instead'''
-    default_x = range(25)
-    default_y = range(0, 50, 2)
-    plot_muts(default_x, default_y, 'r', True, scipy.stats.poisson, max_x=max(default_x))
-    plt.show()
+#def test_more():
+#    refs = range(25), range(25)
+#    queries = [1, 5, 20, 10], [2, 20, 40, 10]
+#    do_plot(refs[0], refs[1], queries[0], queries[1], None)
+#
+#def test_plot():
+#    ''' can verify this works by using scipy.stats.norm.interval instead'''
+#    default_x = range(25)
+#    default_y = range(0, 50, 2)
+#    plot_muts(default_x, default_y, 'r', True, scipy.stats.poisson, max_x=max(default_x))
+#    plt.show()
 
 def main():
-    if sys.argv[1] == 'test': test_more()
+    #if sys.argv[1] == 'test': test_more()
     scheme = schema.Schema(
         { '--query' : os.path.isfile,
           '--refs' : os.path.isfile,

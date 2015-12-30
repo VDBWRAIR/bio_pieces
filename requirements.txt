@@ -8,3 +8,4 @@ pyvcf
 sh
 funcy
 tabulate
+range_regex
