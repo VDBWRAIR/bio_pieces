@@ -1,7 +1,25 @@
 Installation
 ============
 
-1. Install dependencies
+It is recommended to install into a virtualenv. If you know what you are doing
+and don't want to install into virtualenv, then you can skip right to step 3
+
+1. Setup Virtualenv
+
+    It is assumed you have virtualenv already installed. If not see
+    https://virtualenv.pypa.io/en/latest/installation.html
+
+    .. code-block:: bash
+
+        virtualenv env
+
+2. Activate virtualenv
+
+    .. code-block:: bash
+
+        . env/bin/activate
+
+3. Install dependencies
 
     .. code-block:: bash
 
@@ -13,28 +31,8 @@ Installation
 
             pip install -r requirements-py26.txt
 
-2. Install bio_bits
+4. Install bio_bits
 
-    It is recommended to install into a virtualenv. If you know what you are doing
-    and don't want to install into virtualenv, then you can skip right to step 3
+    .. code-block:: bash
 
-    1. Setup Virtualenv
-
-        It is assumed you have virtualenv already installed. If not see
-        https://virtualenv.pypa.io/en/latest/installation.html
-
-        .. code-block:: bash
-
-            virtualenv env
-
-    2. Activate virtualenv
-
-        .. code-block:: bash
-
-            . env/bin/activate
-
-    3. Install bio_bits
-
-        .. code-block:: bash
-
-            python setup.py install
+        python setup.py install

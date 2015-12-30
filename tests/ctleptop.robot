@@ -11,8 +11,8 @@ ${in_fasta} =   tests/Den4_MAAPS_TestData16.fasta
 ${in_genbank} =         tests/testinput/sequence.gb
 
 *** Test Cases ***
-TestCtleptop
-    ${process_result} =         Run Process     ctleptop        -i      ${in_fasta}     -o      ${ACTUAL}       --gb-file       ${in_genbank}
+Testdegen_regions
+    ${process_result} =         Run Process     degen_regions        -i      ${in_fasta}     -o      ${ACTUAL}       --gb-file       ${in_genbank}
 
     # Check system exited  correctly
     Should Be Equal As Integers         ${process_result.rc}        0 

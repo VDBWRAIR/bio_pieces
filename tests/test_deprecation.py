@@ -13,4 +13,3 @@ class TestProjectRename(unittest.TestCase):
         self.assertEqual(1.0, r)
         actual_msg = mock_serr.write.call_args[0][0]
         self.assertIn(dep_msg, actual_msg)
-

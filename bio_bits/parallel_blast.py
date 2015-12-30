@@ -17,8 +17,11 @@ STATIC_BLAST_ARGS = [
 
 # Users cannot have these in the other args passed
 STATIC_DIAMOND_ARGS = [
-    '-t', '--threads', '-d', '--db', '-q', '--query', '--daa', '-a'
+    '-p', '--threads', '-d', '--db', '-q', '--query', '--daa', '-a'
 ]
+
+# Static args for parallel
+PARALLEL_ARGS = ['-u', '--pipe', '--cat', '--block', '10', '--recstart', '>', '--round-robin']
 
 def parse_args():
     parser = argparse.ArgumentParser()
@@ -74,19 +77,20 @@ def parallel_blast(inputfile, outfile, ninst, db, blasttype, task, blastoptions)
     if set(STATIC_BLAST_ARGS).intersection(shlex.split(blastoptions)):
         raise ValueError("You cannot supply any of the arguments inside of {0} as" \
             " optional arguments to blast".format(STATIC_BLAST_ARGS))
+    args = list(PARALLEL_ARGS)
+    args += generate_sshlogins(ninst)
     blast_path = sh.which(blasttype)
+    blast_cmd = [blast_path]
     if blast_path is None:
         raise ValueError("{0} is not in your path(Maybe not installed?)".format(
             blasttype
         ))
-    args = ['-u', '--pipe', '--block', '100k', '--recstart', '>']
-    args += generate_sshlogins(ninst)
-    args += [blast_path]
     if task is not None:
-        args += ['-task', task]
-    args += ['-db', db,]
-    args += shlex.split(blastoptions)
-    args += ['-query', '-']
+        blast_cmd += ['-task', task]
+    blast_cmd += ['-db', db,]
+    blast_cmd += [blastoptions]
+    blast_cmd += ['-query', '{}']
+    args += [' '.join(blast_cmd)]
     cmd = sh.Command('parallel')
     run(cmd, *args, _in=open(inputfile), _out=open(outfile,'w'))
 
@@ -131,7 +135,7 @@ def parallel_diamond(inputfile, outfile, ninst, db, task, diamondoptions):
         '--daa', '{}.{#}', ';', dmnd_path, 'view', '--daa', '{}.{#}.daa'
     ]
     if len(sshlogins) > 2:
-        args = ['-u', '--pipe', '--block', '10', '--recstart', '>', '--cat']
+        args = list(PARALLEL_ARGS)
         args += sshlogins
         diamond_cmd_str = ' '.join(diamond_cmd) + diamondoptions
         args += [diamond_cmd_str]

@@ -21,7 +21,7 @@ setup(
             'beast_checkpoint = bio_bits.beast_checkpoint:main',
             'beast_wrapper = bio_bits.beast_wrapper:beast_wrapper',
             'beast_est_time = bio_bits.beast_wrapper:beast_est_time',
-            'ctleptop = bio_bits.ctleptop:main',
+            'degen_regions = bio_bits.ctleptop:main',
             'parallel_blast = bio_bits.parallel_blast:main',
             'version = bio_bits.version:main',
             'degen = bio_bits.degen:main'
