@@ -27,6 +27,7 @@ setup(
             'degen = bio_bits.degen:main',
             'plot_muts = bio_bits.plot_muts:main',
             'fasta = bio_bits.fasta:main',
+            'make_pcoa = bio_pieces.make_pcoa:main',
             #'sequence_concat = bio_bits.sequence_concat:main',
             #'sequence_files_concat = bio_bits.sequence_files_concat:main',
             #'sequence_split = bio_bits_old.sequence_split:main',

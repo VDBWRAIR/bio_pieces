@@ -13,3 +13,4 @@ Scripts
     degen_regions
     plot_muts
     fasta
+    make_pcoa
